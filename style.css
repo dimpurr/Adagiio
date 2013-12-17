@@ -1,0 +1,149 @@
+/*
+Theme Name: Sankarea
+Theme URI: http://dimpurr.com/
+Version: 0.1
+Author: Dimpurr
+Author URI: http://dimpurr.com
+Description: Sankarea
+Text Domain: Sankarea
+*/
+/* 定义 WordPress 主题信息 */
+
+/* Reset */
+/* 一些通用的清除和 HTML5 定义，如果需要。注意 @import 可能导致一定的效率问题*/
+
+@import url('src/reset.css');
+
+/* Common */
+
+h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
+	font-family: "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Sans;
+	color: #454647;
+}
+
+a , a:visited {
+	text-decoration: none;
+	color: #232425;
+	border-bottom: 1px dashed #ABACAD;
+}
+
+a:hover {
+	color: #070809;
+	-webkit-transition: 0.2s ease all;
+}
+
+article img , article .wp-caption {
+	max-width: 100% !important;
+	width: 100% !important;
+}
+
+.clearfix {
+	clear: both;
+}
+
+/* Main */
+
+#page {
+	max-width: 800px;
+	margin: 440px auto 0 auto;
+}
+
+#banner {
+	width: 100%;
+	width: -webkit-calc(100% - 40px);
+	padding: 0 40px;
+	margin: 0 -40px;
+	height: 360px;
+	position: absolute;
+	top: 0;
+	box-shadow: 15px -15px 150px #121314 inset;
+	background-image: url('img/banner.jpg');
+	background-size: 100%;
+	background-position: center 20%;
+	border-bottom: 4px solid #48c293;
+}
+
+#nav {
+	height: 50px;
+	overflow: hidden;
+	width: -webkit-calc(100% + 100px);
+}
+
+#nav .menu {
+	width: -webkit-calc(100% + 100px);
+	margin: -20px -50px 0 -50px;
+	padding: 30px 50px 0 85px;
+	height: 260px;
+	box-shadow: -110px -20px 130px #000 inset;
+}
+
+#nav li {
+	display: inline-block;
+	text-align: center;
+}
+
+#nav li a {
+	color: #f1faf4;
+	font-weight: bold;
+	border: none;
+	margin: 0 25px 0 0;
+	padding: 5px 3px 2px 3px;
+	font-size: 16px;
+	text-shadow: rgba(0,0,0,0.7) 0 1px 0;
+}
+
+#nav li a:hover {
+	border-bottom: 3px solid #f1faf4;
+}
+
+#head {
+	position: absolute;
+	bottom: -42px;
+}
+
+#head h1 {
+	display: inline-block;
+	background: #362a12;
+	border: 4px solid #48c293;
+	padding: 10px 30px;
+	margin: 0 0 0 40px;
+	box-shadow: 0 0 20px #333;
+}
+
+#head h1 a {
+	font-weight: bold;
+	color: #d3e9d3;
+	text-shadow: 0 0 24px #000, #FFF 0 1px 0;
+	font-size: 42px;
+	border: none;
+}
+
+#head h2 {
+	color: #f1faf4;
+	font-size: 18px;
+	padding-top: 10px;
+	display: inline-block;
+	vertical-align: top;
+	font-variant: small-caps;
+	margin: 0 0 0 20px;
+}
+
+.p_s {
+	float: left;
+	width: 150px;
+	display: block;
+}
+
+.p_c {
+	margin-left: 150px;
+}
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+
+#page {
+	width: 100%;
+}
+
+}
