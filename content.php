@@ -16,7 +16,7 @@
 	</header>
 </hgroup>
 
-<?php the_content('继续阅读','dpt'); ?>
+<?php the_content(); ?>
 
 </section>
 

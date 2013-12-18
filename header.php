@@ -31,11 +31,15 @@
 
 <body>
 
-<header id="banner">
+<header >
+
+<div id="banner">
 
 <nav id="nav">
 	<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
 </nav>
+
+</div>
 
 <hgroup id="head">
 	<h1>
