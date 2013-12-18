@@ -31,7 +31,7 @@
 
 <body>
 
-<header >
+<header id="hcontent" >
 
 <div id="banner">
 
