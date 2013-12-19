@@ -28,6 +28,34 @@ if ( function_exists('register_sidebar') )
 	)
 );
 
+// 定义特色图片
+
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 387, 240, true );
+
+function autoset_featured() {
+
+global $post;
+$already_has_thumb = has_post_thumbnail($post->ID);
+
+if (!$already_has_thumb)  {
+	$attached_image = get_children( "post_parent=$post->ID&post_type=attachment&post_mime_type=image&numberposts=1" );
+	if ($attached_image) {
+		foreach ($attached_image as $attachment_id => $attachment) {
+			set_post_thumbnail($post->ID, $attachment_id);
+		}
+	}
+}
+
+}
+
+add_action('the_post', 'autoset_featured');
+add_action('save_post', 'autoset_featured');
+add_action('draft_to_publish', 'autoset_featured');
+add_action('new_to_publish', 'autoset_featured');
+add_action('pending_to_publish', 'autoset_featured');
+add_action('future_to_publish', 'autoset_featured');
+
 // 检查更新，需要一个·服务器存放 info.json 和主题安装包。请参见 func 目录
 
 require_once(TEMPLATEPATH . '/func/theme-update-checker.php'); 

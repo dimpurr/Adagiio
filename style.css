@@ -1,7 +1,7 @@
 /*
 Theme Name: Sankarea
 Theme URI: http://dimpurr.com/
-Version: 0.1
+Version: 0.2
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: Sankarea
@@ -85,7 +85,7 @@ body {
 	margin: -20px -50px 0 -50px;
 	padding: 30px 50px 0 185px;
 	height: 260px;
-	box-shadow: 0px -20px 130px #000 inset;
+	box-shadow: -1px -20px 80px #000 inset, 0px -20px 100px #000 inset, 0px -20px 80px #000 inset, 0px -20px 80px #000 inset;
 }
 
 #nav li {
@@ -168,8 +168,12 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	opacity: 0.8;
 	transition: 1s ease all;
+}
+
+.p_l_img img {
+	min-width: 387px;
+	min-height: 240px;
 }
 
 .p_l:hover .p_l_img {
@@ -185,7 +189,7 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	padding: 10px 20px;
-	transition: 0.3s ease all;
+	transition: 0.5s ease all;
 }
 
 .p_l_c_a {
@@ -203,7 +207,7 @@ body {
 }
 
 .p_t {
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	position: relative;
 	z-index: 6;
 }
@@ -215,6 +219,16 @@ body {
 
 .p_t h2 {
 	font-weight: normal;
+	font-size: 24px;
+	max-height: 64px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: 0.2s ease all;
+}
+
+.p_t h2:hover {
+	height: auto;
+	max-height: 100%;
 }
 
 .p_i {
@@ -226,15 +240,19 @@ body {
 	background: rgba(211, 233, 211, 0.2);
 	display: inline-block;
 	margin: 2px 4px 2px 0;
-	padding: 0px 15px;
+	padding: 0px 10px;
 	border: none;
 	font-size: 13px;
-	line-height: 28px;
+	line-height: 26px;
 	color: #FFF;
 }
 
+.p_i_t a:hover {
+	background: rgba(211, 233, 211, 0.4);
+}
+
 .p_i_e {
-	margin: 20px 0 0 0;
+	margin: 10px 0 0 0;
 }
 
 .p_i_e a {
@@ -249,8 +267,34 @@ body {
 	line-height: 14px;
 	vertical-align: middle;
 	margin: 0 5px 0 0;
-	background: #777;
+	background: rgba(211, 233, 211, 0.2);
 	border-radius: 100px;
+}
+
+.p_lt a , .p_lt .p_s_c a {
+	color: #362a12;
+}
+
+.p_lt .p_l_c , .p_lt.p_l:hover .p_l_c {
+	position: static;
+	top: auto;
+	bottom: auto;
+	background: none;
+	padding: 0 20px;
+	margin: 
+}
+
+.p_lt .p_i_t a {
+	background: rgba(54, 42, 18, 0.7);
+	color: #FFF;
+}
+
+.p_lt .p_i_e a::before {
+	background: rgba(54, 42, 18, 0.7);
+}
+
+.p_lt h2 {
+	max-height: 100%;
 }
 
 .p_r {

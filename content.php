@@ -1,8 +1,8 @@
 <article class="p_a">
 
-<hgroup class="p_l">
+<hgroup class="p_l <?php if ( !has_post_thumbnail() ) { echo 'p_lt'; };?>  ">
 
-<div class="p_l_c">
+<div class="p_l_c" >
 
 <a class="p_l_c_a" href="<?php the_permalink(); ?>" alt="<?php the_title(); ?>"></a>
 
@@ -27,7 +27,7 @@
 </div>
 
 <div class="p_l_img">
-	<img src="http://192.168.1.200/wp/wp-content/themes/sankarea/img/banner.jpg" />
+	<?php the_post_thumbnail(); ?>
 </div>
 
 </hgroup>
