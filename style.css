@@ -53,8 +53,14 @@ body {
 }
 
 #page , #nav .menu, #head {
-	max-width: 1100px;
+	max-width: 1000px;
 	margin: 0 auto;
+}
+
+#page {
+	padding: 0 20px;
+	position: relative;
+	z-index: 1;
 }
 
 #banner {
@@ -73,11 +79,22 @@ body {
 	border-bottom: 1px solid #362a12;
 }
 
+#hcontent:after {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: #FFF;
+}
+
 #nav {
-	height: 50px;
+	height: 44px;
 	overflow: hidden;
 	width: 110%;
 	margin: 0 -5%;
+	position: fixed;
+	z-index: 20;
+	transition: 0.2s all ease;
 }
 
 #nav div {
@@ -110,6 +127,11 @@ body {
 
 #nav .menu .current-menu-item a , #nav .menu .current_page_item a , #nav .menu:hover .current-menu-item a:hover , #nav .menu:hover .current_page_item a:hover , #nav li a:hover {
 	border-bottom: 3px solid #f1faf4;
+}
+
+.nav_s {
+	background: rgba(54, 42, 18, 0.9);
+	box-shadow: 0 0 15px #777;
 }
 
 #head {
@@ -160,10 +182,21 @@ body {
 .p_a {
 	margin: 0;
 	min-height: 240px;
-	padding: 30px 20px;
+	padding: 30px 0;
 	border-bottom: 2px solid #b2e5d5;
 	vertical-align: top;
 	position: relative;
+}
+
+.p_a:after {
+	content: '';
+	display: block;
+	height: 6px;
+	width: 100px;
+	position: absolute;
+	bottom: -4px;
+	background: rgba(54, 42, 18, 0.7);
+	margin: 0 0 0 17%;
 }
 
 .p_lt {
@@ -236,6 +269,15 @@ body {
 	transition: 0.5s ease all;
 }
 
+.p_l:hover .p_l_c {
+	top: 0;
+	padding: 20px 20px;
+}
+
+.p_l:active .p_l_c {
+	background: rgba(54, 42, 18, 0.8);
+}
+
 .p_l_c_a {
 	width: 100%;
 	height: 100%;
@@ -243,11 +285,6 @@ body {
 	top: 0;
 	left: 0;
 	z-index: 5;
-}
-
-.p_l:hover .p_l_c {
-	top: 0;
-	padding: 20px 20px;
 }
 
 .p_t {
