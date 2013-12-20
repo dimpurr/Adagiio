@@ -1,6 +1,6 @@
-<article class="p_a">
+<article class="p_a<?php if ( !has_post_thumbnail() ) { echo ' p_lt'; };?>">
 
-<hgroup class="p_l <?php if ( !has_post_thumbnail() ) { echo 'p_lt'; };?>  ">
+<hgroup class="p_l">
 
 <div class="p_l_c" >
 
@@ -33,8 +33,10 @@
 </hgroup>
 
 <div class="p_r">
-	<?php echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 540," ... "); ?>
+	<?php // echo mb_strimwidth(strip_tags(apply_filters('the_content', $post->post_content)), 0, 540," ... "); ?>
 	<?php // the_content("继续阅读","dpt"); ?>
+	<?php // echo get_post_excerpt(); ?>
+	<?php the_excerpt(); ?>
 </div>
 
 </article>

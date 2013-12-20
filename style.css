@@ -21,6 +21,10 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 	color: #454647;
 }
 
+p {
+	margin: 0 0 10px 0;
+}
+
 a , a:visited {
 	text-decoration: none;
 	color: #232425;
@@ -48,9 +52,9 @@ body {
 	background: url(img/bg.png) #EFEFEF;
 }
 
-#page {
-	width: 900px;
-	margin: 0 auto 0 auto;
+#page , #nav .menu, #head {
+	max-width: 1100px;
+	margin: 0 auto;
 }
 
 #hcontent {
@@ -80,7 +84,7 @@ body {
 	margin: 0 -5%;
 }
 
-#nav .menu {
+#nav div {
 	width: 100%;
 	margin: -20px -50px 0 -50px;
 	padding: 30px 50px 0 185px;
@@ -109,7 +113,7 @@ body {
 
 #head {
 	position: relative;
-	bottom: 42px;
+	bottom: 112px;
 	height: 0;
 	overflow: visible;
 }
@@ -136,27 +140,41 @@ body {
 	font-size: 18px;
 	padding-top: 10px;
 	display: inline-block;
-	vertical-align: top;
+	vertical-align: bottom;
 	font-variant: small-caps;
 	margin: 0 0 0 20px;
 }
 
 .p_a {
 	margin: 0;
+	min-height: 240px;
 	padding: 30px 20px;
-	height: 240px;
 	border-bottom: 2px solid #b2e5d5;
+	vertical-align: top;
+	position: relative;
+}
+
+.p_lt {
+	min-height: 0;
 }
 
 .p_l {
-	display: block;
+	display: inline-block;
 	width: 45%;
-	height: 100%;
+	height: 240px;
 	margin: 0 15px 0 0;
 	vertical-align: middle;
 	overflow: hidden;
-	float: left;
 	position: relative;
+	min-width: 320px;
+}
+
+.p_lt .p_l {
+	height: auto;
+}
+
+.p_lt .p_l_c_a {
+	display: none;
 }
 
 .p_l a {
@@ -169,11 +187,13 @@ body {
 	top: 0;
 	left: 0;
 	transition: 1s ease all;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .p_l_img img {
-	min-width: 387px;
-	min-height: 240px;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .p_l:hover .p_l_img {
@@ -251,6 +271,10 @@ body {
 	background: rgba(211, 233, 211, 0.4);
 }
 
+.p_lt .p_i_t a:hover {
+	background: rgba(54, 42, 18, 0.5);
+}
+
 .p_i_e {
 	margin: 10px 0 0 0;
 }
@@ -275,7 +299,7 @@ body {
 	color: #362a12;
 }
 
-.p_lt .p_l_c , .p_lt.p_l:hover .p_l_c {
+.p_lt .p_l_c , .p_lt .p_l:hover .p_l_c {
 	position: static;
 	top: auto;
 	bottom: auto;
@@ -298,11 +322,14 @@ body {
 }
 
 .p_r {
+	display: inline-block;
 	width: 50%;
-	margin-left: 50%;
 	font-size: 14px;
 	line-height: 26px;
 	color: #777;
+	position: absolute;
+	top: 25px;
+	left: 50%;
 }
 
 /* Mobile */
