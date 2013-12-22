@@ -1,7 +1,7 @@
 /*
 Theme Name: Adagiio
 Theme URI: http://dimpurr.com/
-Version: 0.3
+Version: 0.4
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: Adagiio
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 }
 
 p {
-	margin: 0 0 15px 0;
+	margin: 7px 0 7px 0;
 }
 
 a , a:visited {
@@ -527,6 +527,10 @@ body {
 #cmt ol , #cmt ul {
 	list-style: none;
 	padding: 0;
+}
+
+#cmt .comment {
+	margin: 15px 0;
 }
 
 #cmt .children {

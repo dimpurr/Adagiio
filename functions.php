@@ -49,12 +49,7 @@ if (!$already_has_thumb)  {
 
 }
 
-add_action('the_post', 'autoset_featured');
-add_action('save_post', 'autoset_featured');
-add_action('draft_to_publish', 'autoset_featured');
 add_action('new_to_publish', 'autoset_featured');
-add_action('pending_to_publish', 'autoset_featured');
-add_action('future_to_publish', 'autoset_featured');
 
 // 检查更新，需要一个·服务器存放 info.json 和主题安装包。请参见 func 目录
 
