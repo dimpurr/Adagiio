@@ -149,6 +149,14 @@ function dpt_pagenavi () {
 	echo paginate_links($pagination);
 }
 
+// 评论附加函数
+
+function delete_comment_link( $id ) {
+	if (current_user_can('level_5')) {
+		echo '<a class="comment-edit-link" href="'.admin_url("comment.php?action=cdc&c=$id").'">删除</a> ';
+	}
+}
+
 // 加载评论
 
 if ( ! function_exists( 'dpt_comment' ) ) :
@@ -167,32 +175,26 @@ function dpt_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
-			<header class="comment-meta comment-author vcard">
 				<?php
-					echo get_avatar( $comment, 44 );
-					printf( '<div class="cmt_meta_head"><cite class="fn">%1$s',
+					echo '<div class="avatar">' . get_avatar( $comment, 44 ) . '</div><div class="cmt_r">';
+					printf( '<span class="cmt_meta_head">%1$s</span>',
 						get_comment_author_link() );
-					printf( '%1$s </cite>',
-						( $comment->user_id === $post->post_author ) ? '<span class="cmt_meta_auth"> ' . __('作者','dpt') . '</span>' : '' );
-					printf( '</div><span class="cmt_meta_time"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></span>',
+					printf( '<span class="cmt_meta_time"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></span>',
 						esc_url( get_comment_link( $comment->comment_ID ) ),
 						get_comment_time( 'c' ),
 						sprintf( '%1$s %2$s' , get_comment_date(), get_comment_time() )
 					);
 				?>
-			</header>
+				<?php edit_comment_link( __('編輯','dpt'), '<span class="edit-link">', '</span>' ); ?>
+				<?php delete_comment_link(get_comment_ID()); ?>
+				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('回复','dpt'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+
+			<div class="cmt_con"><?php comment_text(); ?></div>
 
 			<?php if ( '0' == $comment->comment_approved ) : ?>
 				<p class="comment-awaiting-moderation"><?php _e('审核中','dpt'); ?></p>
 			<?php endif; ?>
-
-			<section class="comment-content comment">
-				<?php comment_text(); ?>
-				<?php edit_comment_link( __('編輯','dpt'), '<span class="edit-link">', '</span>' ); ?>
-				<?php delete_comment_link(get_comment_ID()); ?>
-				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('回复','dpt'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-			</section>
-
+			</div>
 		</article>
 	<?php
 		break;

@@ -1,11 +1,11 @@
 /*
-Theme Name: Sankarea
+Theme Name: Adagiio
 Theme URI: http://dimpurr.com/
-Version: 0.2
+Version: 0.3
 Author: Dimpurr
 Author URI: http://dimpurr.com
-Description: Sankarea
-Text Domain: Sankarea
+Description: Adagiio
+Text Domain: Adagiio
 */
 /* 定义 WordPress 主题信息 */
 
@@ -22,7 +22,7 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 }
 
 p {
-	margin: 0 0 10px 0;
+	margin: 0 0 15px 0;
 }
 
 a , a:visited {
@@ -36,14 +36,58 @@ a:hover {
 	transition: 0.2s ease all;
 }
 
+h3 {
+	border-left: 5px solid #b2e5d5;
+	padding: 5px 0 5px 10px;
+	margin: 0 0 10px 0;
+	background: rgba(211, 233, 211, 0.2);
+	line-height: 25px;
+	vertical-align: middle;
+}
+
+input, input:invalid , textarea, textarea:invalid  {
+	border: 2px solid #b2e5d5;
+	border-width: 0 0 2px 0;
+	background: none;
+	padding: 7px 15px;
+}
+
+input:hover, textarea:hover, input:focus, textarea:focus {
+	background: rgba(211, 233, 211, 0.2);
+}
+
 article img , article .wp-caption {
 	max-width: 100% !important;
-	width: 100% !important;
 	height: auto !important;
 }
 
 .clearfix {
 	clear: both;
+}
+
+.right {
+	float: right;
+}
+
+.wp-caption {
+	margin: 10px auto 10px auto;
+	padding: 5px;
+	text-align: center;
+	border-bottom: 2px solid #b2e5d5;
+}
+
+.wp-caption:hover {
+	background: rgba(211, 233, 211, 0.2);
+}
+
+.wp-caption-text {
+	margin: 0;
+	padding-top: 3px;
+}
+
+.sp_c {
+	font-size: 15px;
+	line-height: 28px;
 }
 
 /* Main */
@@ -52,7 +96,7 @@ body {
 	background: url(img/bg.png) #EFEFEF;
 }
 
-#page , #nav ul, #head {
+#page , #nav ul, #head, #footer {
 	max-width: 1000px;
 	margin: 0 auto;
 }
@@ -61,6 +105,10 @@ body {
 	padding: 0 20px;
 	position: relative;
 	z-index: 1;
+}
+
+#hcontent {
+	margin-top: -2px;
 }
 
 #banner {
@@ -130,7 +178,7 @@ body {
 }
 
 .nav_s {
-	background: rgba(54, 42, 18, 0.9);
+	background: rgba(67, 56, 50, 0.9);
 	box-shadow: 0 0 15px #777;
 }
 
@@ -418,6 +466,116 @@ body {
 	width: 30px;
 }
 
+.sp {
+	border-bottom: 2px solid #b2e5d5;
+}
+
+.sp:after {
+	content: '';
+	display: block;
+	height: 6px;
+	width: 100px;
+	position: relative;
+	bottom: -4px;
+	background: rgba(54, 42, 18, 0.7);
+	margin: 0 0 0 17%;
+}
+
+.sp .p_lt a {
+	border: none;
+}
+
+.sp .p_a {
+	padding-bottom: 20px;
+}
+
+.sp .p_s_c:after {
+	content: ' >';
+}
+
+.sp .p_t , .sp .p_i_t , .sp .p_i_e {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.sp .p_i_t , .sp .p_i_e {
+	display: inline-block;
+	line-height: 26px;
+	margin: 0;
+}
+
+.sp .p_i_t:before , .sp .p_i_e:before {
+	display: none;
+}
+
+.sp .p_s_c , .sp .p_t h2 {
+	display: inline-block;
+	line-height: 34px;
+	vertical-align: middle;
+	margin-bottom: 5px;
+}
+
+.sp_c {
+	padding: 20px 0;
+}
+
+#cmt {
+	margin: 20px 0;
+	font-size: 15px;
+}
+
+#cmt ol , #cmt ul {
+	list-style: none;
+	padding: 0;
+}
+
+#cmt .children {
+	padding-left: 37px;
+}
+
+#cmt .avatar img {
+	float: left;
+	width: 42px;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 2px solid #b2e5d5;
+}
+
+#cmt .cmt_r {
+	margin: 5px 0 0 55px;
+	padding: 0 0 0 10px;
+}
+
+#cmt .comment-meta {
+	font-size: 14px;
+	color: #777;
+}
+
+#cmt .cmt_con {
+	margin: 5px 0 0 0;
+}
+
+#cmt #reply-title small a {
+	font-size: 14px;
+	font-weight: normal;
+	background: rgba(255, 255, 255, 0.4);
+	margin: -8px 5px;
+	padding: 8px 10px;
+	border: none;
+}
+
+#footer_ctn {
+	display: block;
+	background: rgba(54, 42, 18, 1);
+	width: 100%;
+	box-shadow: 0 15px 30px #000 inset;
+	color: #f1faf4;
+	font-size: 12px;
+}
+
+#footer {
+	padding: 20px 20px;
+}
 
 /* Mobile */
 
