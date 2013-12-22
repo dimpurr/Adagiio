@@ -180,7 +180,7 @@ function dpt_comment( $comment, $args, $depth ) {
 						sprintf( '%1$s %2$s' , get_comment_date(), get_comment_time() )
 					);
 				?>
-				<?php edit_comment_link( __('編輯','dpt'), '<span class="edit-link">', '</span>' ); ?>
+				<?php edit_comment_link( __('編輯','dpt'), '', '' ); ?>
 				<?php delete_comment_link(get_comment_ID()); ?>
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('回复','dpt'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 

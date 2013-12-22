@@ -29,7 +29,7 @@
   'cancel_reply_link' => __('放弃治疗','dpt'),
   'label_submit'      => __('发射','dpt'),
 
-  'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="45" rows="8" required aria-required="true">' .
+  'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="77" rows="8" required aria-required="true">' .
     '</textarea></p>',
 
   'must_log_in' => '<p class="must-log-in">' .

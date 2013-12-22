@@ -402,7 +402,11 @@ body {
 	line-height: 14px;
 	vertical-align: middle;
 	margin: 0 5px 0 0;
-	background: rgba(211, 233, 211, 0.2);
+	background-color: rgba(211, 233, 211, 0.2);
+	background-image: url("img/profile.png");
+	background-size: 12px;
+	background-repeat: no-repeat;
+	background-position: center center;
 	border-radius: 100px;
 }
 
@@ -425,7 +429,11 @@ body {
 }
 
 .p_lt .p_i_e a::before {
-	background: rgba(54, 42, 18, 0.7);
+	background-color: rgba(54, 42, 18, 0.7);
+	background-image: url("img/profile.png");
+	background-size: 12px;
+	background-repeat: no-repeat;
+	background-position: center center;
 }
 
 .p_lt h2 {
@@ -516,7 +524,7 @@ body {
 }
 
 .sp_c {
-	padding: 20px 0;
+	padding: 10px 0 15px 0;
 }
 
 #cmt {
@@ -555,6 +563,10 @@ body {
 	color: #777;
 }
 
+#cmt .comment-meta a {
+	margin: 0 10px 0 0;
+}
+
 #cmt .cmt_con {
 	margin: 5px 0 0 0;
 }
@@ -568,11 +580,21 @@ body {
 	border: none;
 }
 
+#cmt .cmt_meta_head , #cmt .cmt_meta_time , #cmt .comment-edit-link {
+	margin: 0 10px 10px 0;
+}
+
+#cmt #comment {
+	width: 550px;
+	max-width: 550px;
+	max-width: 100%;
+}
+
 #footer_ctn {
 	display: block;
-	background: rgba(54, 42, 18, 1);
+	background: rgba(67, 56, 50, 1);
 	width: 100%;
-	box-shadow: 0 15px 30px #000 inset;
+	box-shadow: 0 15px 30px #222 inset;
 	color: #f1faf4;
 	font-size: 12px;
 }
