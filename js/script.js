@@ -15,7 +15,7 @@ function scroll_top(){
 
 function scroll_nav() {
 	var nav = document.getElementById("nav");
-	if (scroll_top() > 100) {
+	if (scroll_top() > 180) {
 		nav.className = "nav_s";
 	} else {
 		nav.className = "";

@@ -52,7 +52,7 @@ body {
 	background: url(img/bg.png) #EFEFEF;
 }
 
-#page , #nav .menu, #head {
+#page , #nav ul, #head {
 	max-width: 1000px;
 	margin: 0 auto;
 }
@@ -394,6 +394,30 @@ body {
 	top: 25px;
 	left: 50%;
 }
+
+#page_nav {
+	margin: 0;
+	position: relative;
+	top: -26px;
+	text-align: right;
+}
+
+#page_nav .page-numbers {
+	display: inline-block;
+	width: 20px;
+	border: none;
+	text-align: center;
+	margin: 0 0 0 5px;
+}
+
+#page_nav .current , #page_nav .page-numbers:hover {
+	border-bottom: 5px solid rgba(54, 42, 18, 0.7);
+}
+
+#page_nav .next , #page_nav .prev {
+	width: 30px;
+}
+
 
 /* Mobile */
 

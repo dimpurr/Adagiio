@@ -31,7 +31,7 @@ if ( function_exists('register_sidebar') )
 // 定义特色图片
 
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 470, 240, true );
+set_post_thumbnail_size( 705, 360, true );
 
 function autoset_featured() {
 
@@ -136,8 +136,8 @@ function dpt_pagenavi () {
 		'type' => 'plain',
 		'end_size'=>'0',
 		'mid_size'=>'5',
-		'prev_text' => __('上一页','dpt'),
-		'next_text' => __('下一页','dpt')
+		'prev_text' => __('←','dpt'),
+		'next_text' => __('→','dpt')
 	);
 
 	if( $wp_rewrite->using_permalinks() )
