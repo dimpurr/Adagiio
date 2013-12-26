@@ -6,8 +6,8 @@ audio:not([controls]) {display:none;}
 html {font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;}
 html,button,input,select,textarea { font-family: "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Sans; color:#222;}
 body {margin:0;font-size:1em;line-height:1.4;}
-::-moz-selection {background:#f7d2d2;color:#333;text-shadow:none;}
-::selection {background:#fe57a1;color:#fff;text-shadow:none;}
+::-moz-selection {background:#362a12;background:rgba(54, 42, 18, 0.7);color:#333;text-shadow:none;}
+::selection , .p_i_t::selection {background:#362a12;background:rgba(54, 42, 18, 0.7);color:#fff;text-shadow:none;}
 a {color:#00e;}
 a:visited {color:#551a8b;}
 a:hover {color:#06e;}
