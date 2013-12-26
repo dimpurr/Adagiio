@@ -7,10 +7,8 @@ Author URI: http://dimpurr.com
 Description: Adagiio
 Text Domain: Adagiio
 */
-/* 定义 WordPress 主题信息 */
 
 /* Reset */
-/* 一些通用的清除和 HTML5 定义，如果需要。注意 @import 可能导致一定的效率问题*/
 
 @import url('src/reset.css');
 
@@ -43,6 +41,18 @@ h3 {
 	background: rgba(211, 233, 211, 0.2);
 	line-height: 25px;
 	vertical-align: middle;
+	overflow: hidden;
+	height: 25px;
+}
+
+q, blockquote {
+	border-left: 5px solid #b2e5d5;
+	padding: 2px 0 2px 16px;
+	transition: 0.2s ease all;
+}
+
+q:hover, blockquote:hover {
+	background: rgba(211, 233, 211, 0.2);
 }
 
 input, input:invalid , textarea, textarea:invalid  {
@@ -70,14 +80,19 @@ article img , article .wp-caption {
 }
 
 .wp-caption {
-	margin: 10px auto 10px auto;
+	margin: 0 auto 24px auto;
 	padding: 5px;
 	text-align: center;
 	border-bottom: 2px solid #b2e5d5;
+	transition: 0.2s ease all;
 }
 
 .wp-caption:hover {
 	background: rgba(211, 233, 211, 0.2);
+}
+
+.wp-caption img {
+	border-radius: 2px;
 }
 
 .wp-caption-text {
@@ -86,8 +101,8 @@ article img , article .wp-caption {
 }
 
 .sp_c {
-	font-size: 15px;
-	line-height: 28px;
+	font-size: 14px;
+	line-height: 26px;
 }
 
 /* Main */
@@ -184,32 +199,29 @@ body {
 
 #head {
 	position: relative;
-	bottom: 112px;
+	bottom: 82px;
 	height: 0;
 	overflow: visible;
 }
 
 #head a {
+	border: none;
 	display: inline-block;
-	background: #362a12;
-	border: 4px solid #48c293;
-	padding: 10px 30px;
 	margin: 0 0 0 40px;
-	box-shadow: 0 0 20px #333;
 	transition: 0.2s ease all;
-}
-
-#head a:hover {
-	box-shadow: 0 0 25px #111;
 }
 
 #head h1 {
 	font-weight: bold;
 	color: #d3e9d3;
-	text-shadow: 0 0 24px #000, #FFF 0 1px 0;
-	font-size: 42px;
+	text-shadow: 0 0 24px #000, 0 1px 0 #FFF;
+	font-size: 46px;
 	border: none;
 	transition: 0.2s ease all;
+}
+
+#head a:hover h1 {
+	text-shadow: 0 0 12px #000, 0 1px 0 #FFF;
 }
 
 #head a:active h1 {
@@ -260,6 +272,7 @@ body {
 	overflow: hidden;
 	position: relative;
 	min-width: 320px;
+	color: #EEE;
 }
 
 .p_l .p_t, .p_l .p_i , .p_l .p_i_t , .p_l .p_i_e {
@@ -276,6 +289,7 @@ body {
 
 .p_lt .p_l {
 	height: auto;
+	color: #362a12;
 }
 
 .p_lt .p_l_c_a , .p_lt .p_l_img {
@@ -386,6 +400,10 @@ body {
 	background: rgba(54, 42, 18, 0.5);
 }
 
+.p_lt .p_i_t a:active {
+	background: rgba(54, 42, 18, 0.4);
+}
+
 .p_i_e {
 	margin: 10px 0 0 0;
 }
@@ -408,6 +426,20 @@ body {
 	background-repeat: no-repeat;
 	background-position: center center;
 	border-radius: 100px;
+	transition: 0.2s ease all;
+	cursor: pointer;
+}
+
+.p_i_e a:hover::before {
+	background-color: rgba(211, 233, 211, 0.4);
+}
+
+.p_i_e .p_i_r a::before {
+	background-image: url("img/comment.png");
+}
+
+.p_i_e .p_i_d a::before {
+	background-image: url("img/edit.png");
 }
 
 .p_lt a , .p_lt .p_s_c a {
@@ -430,10 +462,14 @@ body {
 
 .p_lt .p_i_e a::before {
 	background-color: rgba(54, 42, 18, 0.7);
-	background-image: url("img/profile.png");
-	background-size: 12px;
-	background-repeat: no-repeat;
-	background-position: center center;
+}
+
+.p_lt .p_i_e a:hover::before {
+	background-color: rgba(54, 42, 18, 0.5);
+}
+
+.p_lt .p_i_e a:active::before {
+	background-color: rgba(54, 42, 18, 0.4);
 }
 
 .p_lt h2 {
@@ -524,7 +560,7 @@ body {
 }
 
 .sp_c {
-	padding: 10px 0 15px 0;
+	padding: 10px 0 5px 0;
 }
 
 #cmt {
@@ -551,10 +587,15 @@ body {
 	margin-right: 10px;
 	padding-right: 10px;
 	border-right: 2px solid #b2e5d5;
+	transition: all ease 0.2s;
+}
+
+#cmt .comment article:hover .avatar img {
+	border-right: 2px solid rgba(54, 42, 18, 0.7);
 }
 
 #cmt .cmt_r {
-	margin: 5px 0 0 55px;
+	margin: 5px 0 0 58px;
 	padding: 0 0 0 10px;
 }
 
@@ -571,7 +612,23 @@ body {
 	margin: 5px 0 0 0;
 }
 
-#cmt #reply-title small a {
+#cmt-nav {
+	height: 25px;
+	position: absolute;
+	right: 15px;
+	padding-top: 5px;
+}
+
+#cmt-nav span a {
+	padding: 7px 10px;
+}
+
+#cmt-nav img {
+	width: 20px;
+}
+
+#cmt #reply-title small a ,#cmt-nav a {
+	display: inline-block;
 	font-size: 14px;
 	font-weight: normal;
 	background: rgba(255, 255, 255, 0.4);
@@ -580,8 +637,23 @@ body {
 	border: none;
 }
 
+#cmt #reply-title small a:hover ,#cmt-nav a:hover {
+	background: rgba(255, 255, 255, 0.6);
+}
+
+#cmt #reply-title small a:active ,#cmt-nav a:active {
+	background: rgba(255, 255, 255, 0.7);
+}
+
 #cmt .cmt_meta_head , #cmt .cmt_meta_time , #cmt .comment-edit-link {
 	margin: 0 10px 10px 0;
+}
+
+#cmt .logged-in-as {
+	display: inline;
+	border: 2px solid #b2e5d5;
+	border-width: 0 0 2px 0;
+	padding: 5px 15px 5px 15px;
 }
 
 #cmt #comment {

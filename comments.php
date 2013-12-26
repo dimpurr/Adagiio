@@ -10,8 +10,8 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="cmt-nav" class="navigation" role="navigation">
-			<div class="cmt-nav-prev"><?php previous_comments_link( __('&larr; 更旧的吐槽','dpt') ); ?></div>
-			<div class="cmt-nav-next"><?php next_comments_link( __('更新的吐槽 &rarr;','dpt') ); ?></div>
+			<span class="cmt-nav-prev"><?php previous_comments_link('<img src="http://192.168.1.200/wp/wp-content/themes/adagiio/img/left.png" />'); ?></span>
+			<span class="cmt-nav-next"><?php next_comments_link('<img src="http://192.168.1.200/wp/wp-content/themes/adagiio/img/right.png" />'); ?></span>
 		</nav>
 		<?php endif; ?>
 
@@ -21,10 +21,12 @@
 
 	<?php endif; ?>
 
-<?php $comments_args = array(
+<?php
+
+$comments_args = array(
   'id_form'           => 'cmt_form',
   'id_submit'         => 'cmt_submit',
-  'title_reply'       => '',
+  'title_reply'       => __('来一发吐槽'),
   'title_reply_to'    => __('吐槽 %s','dpt'),
   'cancel_reply_link' => __('放弃治疗','dpt'),
   'label_submit'      => __('发射','dpt'),
