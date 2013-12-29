@@ -697,10 +697,18 @@ body {
 
 /* Mobile */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 
 #page {
 	width: 100%;
 }
+/*
+.p_l , .p_r {
+	float: none;
+	display: block;
+	position: static;
+	width: 100%;
+	height: auto;
+}*/
 
 }

@@ -69,7 +69,7 @@ function dpt_tjaj() { ?>
 	<script type="text/javascript">
 	jQuery(document).ready(function() {
 		// 修改地址为服务器的 theme_tj.php 页面。请参见 func 目录
-		jQuery.get("http://work.dimpurr.com/theme/theme_tj.php?theme_name=StartPress&blog_url=<?=get_bloginfo('url')?>&t=" + Math.random());
+		jQuery.get("http://work.dimpurr.com/theme/theme_tj.php?theme_name=Adagiio&blog_url=<?=get_bloginfo('url')?>&t=" + Math.random());
 	});
 	</script>
 <?php };
