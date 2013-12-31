@@ -1,7 +1,7 @@
 /*
 Theme Name: Adagiio
 Theme URI: http://dimpurr.com/
-Version: 0.4
+Version: 0.5
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: Adagiio
@@ -21,17 +21,18 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 
 p {
 	margin: 7px 0 7px 0;
+	word-wrap: break-word;
 }
 
 a , a:visited {
 	text-decoration: none;
 	color: #232425;
 	border-bottom: 1px dashed #ABACAD;
+	transition: 0.2s ease all;
 }
 
 a:hover {
 	color: #070809;
-	transition: 0.2s ease all;
 }
 
 h3 {
@@ -47,7 +48,8 @@ h3 {
 
 q, blockquote {
 	border-left: 5px solid #b2e5d5;
-	padding: 2px 0 2px 16px;
+	margin: 1em 20px 1em 40px;
+	padding: 2px 8px 2px 16px;
 	transition: 0.2s ease all;
 }
 
@@ -60,10 +62,19 @@ input, input:invalid , textarea, textarea:invalid  {
 	border-width: 0 0 2px 0;
 	background: none;
 	padding: 7px 15px;
+	transition: all ease 0.2s;
 }
 
-input:hover, textarea:hover, input:focus, textarea:focus {
+input:hover, textarea:hover, input:focus, textarea:focus, textarea:focus, input[type="submit"]:hover, input[type="reset"]:hover {
 	background: rgba(211, 233, 211, 0.2);
+}
+
+input:active, textarea:active, input[type="submit"], input[type="reset"] {
+	background: rgba(211, 233, 211, 0.4);
+}
+
+input[type="submit"]:active, input[type="reset"]:active {
+	background: rgba(211, 233, 211, 0.9);
 }
 
 article img , article .wp-caption {
@@ -171,6 +182,7 @@ body {
 #nav li {
 	display: inline-block;
 	text-align: center;
+	margin: 0 0 10px 0;
 }
 
 #nav li a {
@@ -225,7 +237,7 @@ body {
 
 #head h1 {
 	font-weight: bold;
-	color: #d3e9d3;
+	color: #F0F8F0;
 	text-shadow: 0 0 12px #222, 0 1px 0 #FFF;
 	font-size: 56px;
 	border: none;
@@ -247,14 +259,14 @@ body {
 	display: inline-block;
 	vertical-align: bottom;
 	font-variant: small-caps;
-	margin: 0 0 4px 20px;
+	margin: 0 0 6px 20px;
 	text-shadow: 0 0 8px #333;
 }
 
 .p_a {
 	margin: 0;
 	min-height: 240px;
-	padding: 30px 0;
+	padding: 20px 0 30px 0;
 	border-bottom: 2px solid #b2e5d5;
 	vertical-align: top;
 	position: relative;
@@ -411,7 +423,7 @@ body {
 }
 
 .p_lt .p_i_t a:hover {
-	background: rgba(54, 42, 18, 0.6);
+	background: rgba(54, 42, 18, 0.5);
 }
 
 .p_lt .p_i_t a:active {
@@ -466,7 +478,7 @@ body {
 	bottom: auto;
 	background: none;
 	padding: 0 20px;
-	margin: 
+	margin: 0;
 }
 
 .p_lt .p_i_t a {
@@ -479,7 +491,7 @@ body {
 }
 
 .p_lt .p_i_e a:hover::before {
-	background-color: rgba(54, 42, 18, 0.6);
+	background-color: rgba(54, 42, 18, 0.5);
 }
 
 .p_lt .p_i_e a:active::before {
@@ -494,7 +506,7 @@ body {
 	display: inline-block;
 	width: 50%;
 	font-size: 14px;
-	line-height: 26px;
+	line-height: 28px;
 	color: #777;
 	position: absolute;
 	top: 28px;
@@ -559,7 +571,7 @@ body {
 .sp .p_i_t , .sp .p_i_e {
 	display: inline-block;
 	line-height: 26px;
-	margin: 0;
+	margin: 9px 0 2px 0;
 }
 
 .sp .p_i_t:before , .sp .p_i_e:before {
@@ -568,9 +580,12 @@ body {
 
 .sp .p_s_c , .sp .p_t h2 {
 	display: inline-block;
-	line-height: 34px;
+	line-height: 28px;
 	vertical-align: middle;
-	margin-bottom: 5px;
+}
+
+.sp .p_t h2 {
+	display: inline;
 }
 
 .sp_c {
@@ -578,7 +593,7 @@ body {
 }
 
 #cmt {
-	margin: 20px 0;
+	margin: 5px 0;
 	font-size: 15px;
 }
 
@@ -587,12 +602,22 @@ body {
 	padding: 0;
 }
 
-#cmt .comment {
-	margin: 15px 0;
+#cmt .cmt_list {
+	margin-top: 0;
+}
+
+#cmt ol {
+	margin: 25px 0 0 0;
 }
 
 #cmt .depth-1 {
-	margin: 15px 0 25px 0;
+	margin: 0px 0 5px 0;
+	padding: 10px 0 11px 0;
+	border-bottom: 1px dashed #b2e5d5;
+}
+
+#cmt .depth-1:last-of-type {
+	border: none;
 }
 
 #cmt .children {
@@ -608,6 +633,7 @@ body {
 
 #cmt .cmt_r {
 	border-left: 2px solid #b2e5d5;
+	transition: all ease 0.25s;
 }
 
 #cmt .comment article:hover .cmt_r {
@@ -674,13 +700,26 @@ body {
 	border: 2px solid #b2e5d5;
 	border-width: 0 0 2px 0;
 	padding: 5px 15px 5px 15px;
-	margin: 0 0 10px 0;
+	margin: 0;
+}
+
+#cmt #cmt_submit {
+	width: 80px;
+	margin: 5px 5px 10px 0;
+}
+
+#cmt input {
+	margin: 5px 10px 5px 0;
+}
+
+.comment-form-comment {
+	position: relative;
 }
 
 #cmt #comment {
-	width: 550px;
+	height: 140px;
+	width: 80%;
 	max-width: 550px;
-	max-width: 100%;
 }
 
 #footer_ctn {
@@ -698,18 +737,66 @@ body {
 
 /* Mobile */
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
 
-#page {
-	width: 100%;
+#nav {
+	position: static;
+	margin: 0;
+	height: 160px;
 }
-/*
-.p_l , .p_r {
+
+#nav #nav_sd {
+	padding: 30px 50px 0 90px;
+}
+
+#nav_sd div {
+	position: static;
+	padding: 0;
+}
+
+#nav .menu ul {
+	box-sizing: border-box;
+	padding-left: 18px;
+}
+
+.nav_s {
+	background: none;
+	box-shadow: none;
+}
+
+#head {
+	bottom: 122px;
+}
+
+#head a {
+	margin: 0 0 0 20px;
+}
+
+#head h2 {
+	display: block;
+	padding: 0;
+	margin: 0 0 4px 20px;
+}
+
+.p_l {
 	float: none;
 	display: block;
-	position: static;
-	width: 100%;
-	height: auto;
-}*/
+	position: relative;
+	width: auto;
+	margin: 0;
+}
+
+.p_lt .p_l_c , .p_lt .p_l:hover .p_l_c {
+	padding: 0;
+}
+
+.p_r {
+	float: none;
+	display: block;
+	position: relative;
+	top: 14px;
+	left: 0;
+	width: auto;
+}
 
 }

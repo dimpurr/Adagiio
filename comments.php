@@ -4,7 +4,7 @@
 
 	<?php if ( have_comments() ) : ?>
 
-		<ol class="cmt_list">
+		<ol id="comments" class="cmt_list">
 			<?php wp_list_comments( array( 'callback' => 'dpt_comment', 'style' => 'ol' ) ); ?>
 		</ol>
 
@@ -31,7 +31,7 @@ $comments_args = array(
   'cancel_reply_link' => __('放弃治疗','dpt'),
   'label_submit'      => __('发射','dpt'),
 
-  'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" cols="77" rows="8" required aria-required="true">' .
+  'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" required aria-required="true">' .
     '</textarea></p>',
 
   'must_log_in' => '<p class="must-log-in">' .
