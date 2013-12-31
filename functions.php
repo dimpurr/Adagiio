@@ -96,6 +96,28 @@ if ($dpt_fitj == true) {
 
 };
 
+// 获取博客标题
+
+function dpt_title( $title, $sep ) {
+	global $paged, $page;
+
+	if ( is_feed() )
+		return $title;
+
+	$title .= get_bloginfo( 'name' );
+
+	$site_description = get_bloginfo( 'description', 'display' );
+	if ( $site_description && ( is_home() || is_front_page() ) )
+		$title = "$title $sep $site_description";
+
+	if ( $paged >= 2 || $page >= 2 )
+		$title = "$title $sep " . sprintf( __( '页面 %s', 'dpt' ), max( $paged, $page ) );
+
+	return $title;
+}
+
+add_filter( 'wp_title', 'dpt_title', 10, 2 );
+
 // 显示摘要
 
 function get_post_excerpt($post, $excerpt_length=360){

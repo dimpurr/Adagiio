@@ -134,7 +134,7 @@ body {
 	height: 360px;
 	top: 0;
 	box-shadow: 30px -15px 150px #121314 inset, 0 1px 1px #FFF inset, 0 1px 1px #FFF;
-	background-image: url('img/banner.jpg');
+	background-image: url('img/banner3.gif');
 	background-size: 100%;
 	background-size: cover;
 	background-position: center 20%;
@@ -219,26 +219,25 @@ body {
 #head a {
 	border: none;
 	display: inline-block;
-	margin: 0 0 0 48px;
+	margin: 0 0 0 32px;
 	transition: 0.2s ease all;
 }
 
 #head h1 {
 	font-weight: bold;
 	color: #d3e9d3;
-	text-shadow: 0 0 24px #000, 0 1px 0 #FFF;
+	text-shadow: 0 0 12px #222, 0 1px 0 #FFF;
 	font-size: 56px;
 	border: none;
 	transition: 0.2s ease all;
 }
 
 #head a:hover h1 {
-	text-shadow: 0 0 12px #000, 0 1px 0 #FFF;
+	text-shadow: 0 0 8px #333, 0 1px 0 #FFF;
 }
 
 #head a:active h1 {
-	color: #48c293;
-	text-shadow: 0 0 24px #000, #60DBAC 0 1px 0;
+	text-shadow: 0 0 8px #333, 0 1px 0 #FFF, 0 2px 0 #FFF, 0 3px 0 #FFF;
 }
 
 #head h2 {
@@ -248,7 +247,8 @@ body {
 	display: inline-block;
 	vertical-align: bottom;
 	font-variant: small-caps;
-	margin: 0 0 0 20px;
+	margin: 0 0 4px 20px;
+	text-shadow: 0 0 8px #333;
 }
 
 .p_a {
@@ -370,12 +370,13 @@ body {
 .p_t .p_s_c a {
 	font-size: 13px;
 	color: #FFF;
+
 }
 
 .p_t h2 {
 	font-weight: normal;
 	font-size: 24px;
-	max-height: 64px;
+	max-height: 66px;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	transition: 0.2s ease all;
@@ -410,11 +411,11 @@ body {
 }
 
 .p_lt .p_i_t a:hover {
-	background: rgba(54, 42, 18, 0.5);
+	background: rgba(54, 42, 18, 0.6);
 }
 
 .p_lt .p_i_t a:active {
-	background: rgba(54, 42, 18, 0.4);
+	background: rgba(54, 42, 18, 0.9);
 }
 
 .p_i_e {
@@ -478,11 +479,11 @@ body {
 }
 
 .p_lt .p_i_e a:hover::before {
-	background-color: rgba(54, 42, 18, 0.5);
+	background-color: rgba(54, 42, 18, 0.6);
 }
 
 .p_lt .p_i_e a:active::before {
-	background-color: rgba(54, 42, 18, 0.4);
+	background-color: rgba(54, 42, 18, 0.9);
 }
 
 .p_lt h2 {
@@ -496,7 +497,7 @@ body {
 	line-height: 26px;
 	color: #777;
 	position: absolute;
-	top: 25px;
+	top: 28px;
 	left: 50%;
 }
 
