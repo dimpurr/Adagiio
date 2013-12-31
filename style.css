@@ -148,7 +148,7 @@ body {
 	background-image: url('img/banner3.gif');
 	background-size: 100%;
 	background-size: cover;
-	background-position: center 20%;
+	background-position: center 40%;
 	background-repeat: no-repeat;
 	border-bottom: 1px solid #414141;
 }
@@ -607,7 +607,11 @@ body {
 }
 
 #cmt ol {
-	margin: 25px 0 0 0;
+	margin: 15px 0 0 0;
+}
+
+.comment li {
+	margin: 0 0 15px 0;
 }
 
 #cmt .depth-1 {
