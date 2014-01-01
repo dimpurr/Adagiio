@@ -14,9 +14,12 @@ Text Domain: Adagiio
 
 /* Common */
 
+body {
+	color: #454647;
+}
+
 h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 	font-family: "Hiragino Sans GB W3", "Hiragino Sans GB", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Micro Hei Mono", "WenQuanYi Zen Hei", "WenQuanYi Zen Hei", "Apple LiGothic Medium", "SimHei", "ST Heiti", "WenQuanYi Zen Hei Sharp", Sans;
-	color: #454647;
 }
 
 p {
@@ -40,7 +43,7 @@ a:hover {
 
 h3 {
 	border-left: 5px solid #b2e5d5;
-	padding: 5px 0 5px 10px;
+	padding: 5px 15px 5px 10px;
 	margin: 0 0 10px 0;
 	background: rgba(211, 233, 211, 0.2);
 	line-height: 25px;
@@ -61,6 +64,22 @@ q, blockquote {
 
 q:hover, blockquote:hover {
 	background: rgba(211, 233, 211, 0.2);
+}
+
+ul li {
+	list-style-type: square;
+}
+
+.blackbg  {
+	color: #e1eae4;
+}
+
+.blackbg a , .blackbg a:visited {
+	color: #f1faf4;
+}
+
+.blackbg a:hover {
+	color: #d1dad4;
 }
 
 input, input:invalid , textarea, textarea:invalid  {
@@ -134,7 +153,7 @@ body {
 	background: url(img/bg.png) #EFEFEF;
 }
 
-#page , #nav ul, #head, #footer, #nav .menu ul {
+#page , #nav ul, #head, #footer, #nav .menu ul , #sidebar {
 	max-width: 1000px;
 	margin: 0 auto;
 }
@@ -818,6 +837,50 @@ body {
 	padding: 20px 20px;
 }
 
+#sidebar {
+	text-align: center;
+}
+
+.widgets {
+	display: inline-block;
+	width: 30%;
+	margin: 20px 10px;
+	vertical-align: top;
+}
+
+.widgets h3 {
+	border-left: none;
+	border-bottom: 1px solid #f1faf4;
+	background: none;
+	text-align: left;
+}
+
+.widgets ul {
+	padding: 0 0 0 20px;
+}
+
+.widgets ul li {
+	margin: 1em 0;
+}
+
+.tagcloud 1 a {
+	background: rgb(211, 233, 211);
+	background: rgba(211, 233, 211, 0.2);
+}
+
+#wp-calendar td {
+	width: 1%;
+	height: 26px;
+}
+
+#wp-calendar caption {
+	font-weight: bold;
+	margin-bottom: 5px;
+	margin-left: -5px;
+	font-size: 16px;
+	line-height: 28px;
+}
+
 /* Mobile */
 
 @media screen and (max-width: 850px) {
@@ -882,6 +945,11 @@ body {
 	position: relative;
 	top: 14px;
 	left: 0;
+	width: auto;
+}
+
+.widgets {
+	display: block;
 	width: auto;
 }
 

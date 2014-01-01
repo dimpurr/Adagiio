@@ -21,10 +21,10 @@ if ( function_exists('register_sidebar') )
 		'id' => 'dpt',
 		'description' => 'Sidebar',
 		'class' => '',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>',
+		'before_widget' => '<section class="widgets">',
+		'after_widget' => '</section>',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
 	)
 );
 
