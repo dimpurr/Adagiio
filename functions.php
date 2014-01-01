@@ -31,7 +31,7 @@ if ( function_exists('register_sidebar') )
 // 定义特色图片
 
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 705, 360, true );
+set_post_thumbnail_size( 800, 410, true );
 
 function autoset_featured() {
 

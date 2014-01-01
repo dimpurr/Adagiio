@@ -16,6 +16,8 @@ Text Domain: Adagiio
 
 body {
 	color: #454647;
+	word-wrap: break-word;
+	word-break: break-all;
 }
 
 h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
@@ -312,6 +314,17 @@ body {
 	font-variant: small-caps;
 	margin: 0 0 6px 20px;
 	text-shadow: 0 0 8px #333;
+}
+
+#article_ctn {
+	padding: 0;
+	margin: 0;
+}
+
+#article_ctn li {
+	display: block;
+	padding: 0;
+	margin: 0;
 }
 
 .p_a {
@@ -933,6 +946,7 @@ body {
 	position: relative;
 	width: auto;
 	margin: 0;
+	min-width: 0;
 }
 
 .p_lt .p_l_c , .p_lt .p_l:hover .p_l_c {
@@ -946,6 +960,10 @@ body {
 	top: 14px;
 	left: 0;
 	width: auto;
+}
+
+.p_i_t::before, .p_i_e::before {
+	content: none;
 }
 
 .widgets {

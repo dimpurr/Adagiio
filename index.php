@@ -1,11 +1,11 @@
 <?php get_header(); ?>
 
 <section id="content">
-
+<ul id="article_ctn">
 <?php if ( have_posts() ) : ?>
 <?php while ( have_posts() ) : the_post(); ?>
 		
-<article class="p_a<?php if ( !has_post_thumbnail() ) { echo ' p_lt'; };?>">
+<li><article class="p_a<?php if ( !has_post_thumbnail() ) { echo ' p_lt'; };?>">
 
 <hgroup class="p_l">
 <div class="p_l_c" >
@@ -42,10 +42,10 @@
 	<?php the_excerpt(); ?>
 </div>
 
-</article>
+</article></li>
 
 <?php endwhile; ?>
-
+</ul>
 	<nav id="page_nav"><?php dpt_pagenavi(); ?></nav>
 
 <?php else : ?>
