@@ -29,7 +29,7 @@
 
 <header id="hcontent" >
 
-<div id="banner">
+<div id="banner" style="background-image: url('<?=get_template_directory_uri();?>/banner/<?=rand(1,6);?>.jpg');">
 
 <nav id="nav">
 	<div id="nav_sd"><?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?></div>

@@ -59,6 +59,13 @@ $wpdaxue_update_checker = new ThemeUpdateChecker(
 	'http://work.dimpurr.com/theme/startpress/update/info.json'
 );
 
+// 随机头图
+
+function dpt_ecbg() {
+$img_num = 6;
+echo 'style="background-image: url("' . get_template_directory_uri() . 'banner/' . rand(1,$img_num) . '.jpg");"';
+};
+
 // 主题使用统计，如果需要。
 
 function dpt_count() {
