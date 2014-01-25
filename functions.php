@@ -55,8 +55,8 @@ add_action('new_to_publish', 'autoset_featured');
 
 require_once(TEMPLATEPATH . '/func/theme-update-checker.php'); 
 $wpdaxue_update_checker = new ThemeUpdateChecker(
-	'StartPress',
-	'http://work.dimpurr.com/theme/startpress/update/info.json'
+	'Adagiio',
+	'http://work.dimpurr.com/theme/adagiio/update/info.json'
 );
 
 // 随机头图
@@ -124,6 +124,13 @@ function dpt_title( $title, $sep ) {
 }
 
 add_filter( 'wp_title', 'dpt_title', 10, 2 );
+
+// 随机头图
+
+function dpt_banner() {
+	$num = get_option( "dpt_banner_n" , "1" );
+	echo get_template_directory_uri() . "/banner/" . rand(1,$num);
+}
 
 // 显示摘要
 
@@ -230,8 +237,8 @@ endif;
 
 function dpt_menu_func(){   
 	add_theme_page(
-		__('设置','dpt'),
-		__('设置','dpt'),
+		__('Adagiio','dpt'),
+		__('Adagiio','dpt'),
 		'administrator',
 		'dpt_menu',
 		'dpt_config');
@@ -239,15 +246,20 @@ function dpt_menu_func(){
 
 add_action('admin_menu', 'dpt_menu_func');
 
-function dpt_config(){ dpt_thtj(); ?>
+function dpt_config(){ dpt_count(); ?>
 
 <form method="post" name="dpt_form" id="dpt_form">
 
 <h1><?php _e('主题设置'); ?></h1>
+<hr width="600" align="left" color="#DDD" />
+<h3>随机头图数&nbsp;&nbsp;&nbsp;&nbsp;<small>钉子大好评偷懒中，请等待更新上传组件</small></h3>
+<input type="text" size="80" name="dpt_banner_n" id="dpt_banner_n" placeholder="<?php _e('将供随机切换的 jpg 图片按 1 开始的数字命名放入 banner 文件夹并输入图片总数','dpt'); ?>" value="<?php echo get_option('dpt_banner_n'); ?>"/>
 
-<input type="text" size="80" name="dpt_example" id="dpt_example" placeholder="<?php _e('示例控件','dpt'); ?>" value="<?php echo get_option('dpt_example'); ?>"/>
-<input type="button" name="upload_button" value="<?php _e('上传','dpt'); ?>" id="upbottom"/><br>
+<br>
+<h3>统计代码</h3>
+<textarea name="dpt_tongji" rows="10" cols="60" placeholder="<?php _e('贴入统计工具提供的网站统计代码','dpt'); ?>" style="font-size: 14px; font-family: Consolas, monospace, sans-serif, sans"><?php echo get_option('dpt_tongji'); ?></textarea><br>
 
+<br>
 <input type="submit" name="option_save" value="<?php _e('保存设置','dpt'); ?>" />
 
 <?php wp_enqueue_script('thickbox'); wp_enqueue_style('thickbox'); ?>
@@ -281,8 +293,12 @@ jQuery(document).ready(function() {
 
 if(isset($_POST['option_save'])){
 
-	$dpt_example = stripslashes($_POST['dpt_example']);
-	update_option( 'dpt_example', $dpt_example );
+	$dpt_banner_n = stripslashes($_POST['dpt_banner_n']);
+	update_option( 'dpt_banner_n', $dpt_banner_n );
+
+	$dpt_tongji = stripslashes($_POST['dpt_tongji']);
+	update_option( 'dpt_tongji', $dpt_tongji );
+
 }
 
 ?>

@@ -1,7 +1,7 @@
 /*
 Theme Name: Adagiio
 Theme URI: http://dimpurr.com/
-Version: 0.5
+Version: 0.9
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: Adagiio
@@ -278,6 +278,47 @@ body {
 
 #nav_sd div {
 	padding-left: 32px;
+}
+
+#nav_search {
+	display: inline-block;
+	position: absolute;
+	right: -7px;
+	top: 0;
+	margin: 0;
+	padding: 0;
+}
+
+#nav_search_s {
+	margin: 0;
+	color: #FEFEFE;
+	border: none;
+	height: 30px;
+	width: 0;
+	padding-left: 44px;
+	border-left: 2px solid rgba(255,255,255,0.4);
+	background-image: url("img/search.png");
+	background-size: 22px;
+	background-position: 12px center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.nav_s #nav_search_s {
+	border-left: 2px solid rgba(255,255,255,0);
+}
+
+#nav_search_s:focus {
+	width: 200px;
+	cursor: text;
+}
+
+#nav_search_s::-webkit-input-placeholder {
+	color: #FEFEFE;
+}
+
+#nav_search_s["placeholder"], #nav_search_s::placeholder, #nav_search_s::-webkit-input-placeholder, #nav_search_s:-moz-placeholder, #nav_search_s::-moz-placeholder, #nav_search_s:-ms-input-placeholder {
+	color: #FEFEFE;
 }
 
 #hcontent .nav_s {
@@ -865,8 +906,17 @@ body {
 	font-size: 12px;
 }
 
+#footer_ctn a {
+	color: #f1faf4;
+}
+
+#footer_ctn a:hover {
+	color: #eaeadd;
+}
+
 #footer {
-	padding: 20px 20px;
+	padding: 0 20px 20px 20px;
+	text-align: right;
 }
 
 #sidebar {
@@ -905,13 +955,18 @@ body {
 	margin: 5px 0;
 }
 
+.tagcloud a {
+	line-height: 1.6em;
+	vertical-align: middle;
+}
+
 #wp-calendar {
 	text-align: center;
 }
 
 #wp-calendar td {
 	width: 1%;
-	height: 26px;
+	height: 2em;
 }
 
 #wp-calendar caption {
@@ -925,6 +980,10 @@ body {
 /* Mobile */
 
 @media screen and (max-width: 850px) {
+
+.right {
+	float: none;
+}
 
 #nav {
 	position: static;
@@ -947,6 +1006,18 @@ body {
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 	padding-left: 18px;
+}
+
+#nav_search {
+	display: block;
+	position: static;
+}
+
+#nav_search_s, #nav_search_s:focus {
+	background-position: 22px center;
+	padding-left: 54px;
+	display: block;
+	width: 100%;
 }
 
 .nav_s {
@@ -988,10 +1059,6 @@ body {
 	top: 14px;
 	left: 0;
 	width: auto;
-}
-
-.p_i_t::before, .p_i_e::before {
-	content: none;
 }
 
 .widgets {

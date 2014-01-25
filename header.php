@@ -29,10 +29,15 @@
 
 <header id="hcontent" >
 
-<div id="banner" style="background-image: url('<?=get_template_directory_uri();?>/banner/<?=rand(1,6);?>.jpg');">
+<div id="banner" style="background-image: url('<?php dpt_banner(); ?>.jpg');">
 
 <nav id="nav">
-	<div id="nav_sd"><?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?></div>
+	<div id="nav_sd">
+		<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
+		<form id="nav_search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+			<input id="nav_search_s" type="text" name="s" id="s" placeholder="Enter to Search" size="10" />
+		</form>
+	</div>
 </nav>
 
 </div>
