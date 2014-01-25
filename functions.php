@@ -237,8 +237,8 @@ endif;
 
 function dpt_menu_func(){   
 	add_theme_page(
-		__('Adagiio','dpt'),
-		__('Adagiio','dpt'),
+		__('Adagiio Config','dpt'),
+		__('Adagiio Config','dpt'),
 		'administrator',
 		'dpt_menu',
 		'dpt_config');
