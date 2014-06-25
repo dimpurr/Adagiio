@@ -59,13 +59,6 @@ $wpdaxue_update_checker = new ThemeUpdateChecker(
 	'http://work.dimpurr.com/theme/adagiio/update/info.json'
 );
 
-// 随机头图
-
-function dpt_ecbg() {
-$img_num = 6;
-echo 'style="background-image: url("' . get_template_directory_uri() . 'banner/' . rand(1,$img_num) . '.jpg");"';
-};
-
 // 主题使用统计，如果需要。
 
 function dpt_count() {
@@ -128,8 +121,8 @@ add_filter( 'wp_title', 'dpt_title', 10, 2 );
 // 随机头图
 
 function dpt_banner() {
-	$num = get_option( "dpt_banner_n" , "1" );
-	echo get_template_directory_uri() . "/banner/" . rand(1,$num);
+	$parray = glob(get_stylesheet_directory() . "/banner/*.*");
+	echo get_template_directory_uri() . "/banner/" . basename($parray[array_rand($parray)]);
 }
 
 // 显示摘要
@@ -184,7 +177,7 @@ function dpt_pagenavi () {
 
 function delete_comment_link( $id ) {
 	if (current_user_can('level_5')) {
-		echo '<a class="comment-edit-link" href="'.admin_url("comment.php?action=cdc&c=$id").'">删除</a> ';
+		echo '<a class="comment-delete-link" href="'.admin_url("comment.php?action=cdc&c=$id").'">删除</a> ';
 	}
 }
 
@@ -198,7 +191,7 @@ function dpt_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php echo 'Pingback '; ?> <?php comment_author_link(); ?> <?php edit_comment_link( '编辑', '<span class="edit-link">', '</span>' ); ?></p>
+		<p><?php echo 'Pingback '; ?> <?php comment_author_link(); ?> <aside class="comment-link"><?php edit_comment_link( '编辑', '<span class="comment-edit-link">', '</span>' ); ?></aside></p>
 	<?php
 			break;
 		default :
@@ -206,19 +199,22 @@ function dpt_comment( $comment, $args, $depth ) {
 	?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 		<article id="comment-<?php comment_ID(); ?>" class="comment">
-				<?php
-					echo '<div class="avatar">' . get_avatar( $comment, 44 ) . '</div><div class="cmt_r">';
-					printf( '<span class="cmt_meta_head">%1$s</span>',
-						get_comment_author_link() );
-					printf( '<span class="cmt_meta_time"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></span>',
-						esc_url( get_comment_link( $comment->comment_ID ) ),
-						get_comment_time( 'c' ),
-						sprintf( '%1$s %2$s' , get_comment_date(), get_comment_time() )
-					);
-				?>
+			<?php
+				echo '<div class="avatar">' . get_avatar( $comment, 44 ) . '</div><div class="cmt_r">';
+				printf( '<span class="cmt_meta_head">%1$s</span>',
+					get_comment_author_link() );
+				printf( '<span class="cmt_meta_time"><a href="%1$s"><time datetime="%2$s">%3$s</time></a></span>',
+					esc_url( get_comment_link( $comment->comment_ID ) ),
+					get_comment_time( 'c' ),
+					sprintf( '%1$s %2$s' , get_comment_date(), get_comment_time() )
+				);
+			?>
+				
+			<aside class="comment-link">
 				<?php edit_comment_link( __('編輯','dpt'), '', '' ); ?>
 				<?php delete_comment_link(get_comment_ID()); ?>
 				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => __('回复','dpt'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+			</aside>
 
 			<div class="cmt_con"><?php comment_text(); ?></div>
 
@@ -252,8 +248,8 @@ function dpt_config(){ dpt_count(); ?>
 
 <h1><?php _e('主题设置'); ?></h1>
 <hr width="600" align="left" color="#DDD" />
-<h3>随机头图数&nbsp;&nbsp;&nbsp;&nbsp;<small>钉子大好评偷懒中，请等待更新上传组件</small></h3>
-<input type="text" size="80" name="dpt_banner_n" id="dpt_banner_n" placeholder="<?php _e('将供随机切换的 jpg 图片按 1 开始的数字命名放入 banner 文件夹并输入图片总数','dpt'); ?>" value="<?php echo get_option('dpt_banner_n'); ?>"/>
+<h3>随机头图</h3>
+<p>将会随机输出 /bannner/ 下的文件作为随机头图，请确保有至少一个文件且全部为有效图片</p>
 
 <br>
 <h3>统计代码</h3>

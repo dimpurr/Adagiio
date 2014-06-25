@@ -1,7 +1,7 @@
 /*
 Theme Name: Adagiio
 Theme URI: http://dimpurr.com/
-Version: 0.9
+Version: 1.0
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A MultiImage Anime WordPress Theme
@@ -320,6 +320,7 @@ body {
 	padding-left: 44px;
 	border-left: 2px solid rgba(255,255,255,0.4);
 	background-image: url("img/search.png");
+	background-image: url("img/search.svg");
 	background-size: 22px;
 	background-position: 12px center;
 	background-repeat: no-repeat;
@@ -618,9 +619,10 @@ body {
 	background-color: rgb(211, 233, 211);
 	background-color: rgba(211, 233, 211, 0.2);
 	background-image: url("img/profile.png");
-	-webkit-background-size: 12px;
-	-moz-background-size: 12px;
-	background-size: 12px;
+	background-image: url("img/profile.svg");
+	-webkit-background-size: 18px;
+	-moz-background-size: 18px;
+	background-size: 18px;
 	background-repeat: no-repeat;
 	background-position: center center;
 	border-radius: 100px;
@@ -638,10 +640,18 @@ body {
 
 .p_i_e .p_i_r a::before {
 	background-image: url("img/comment.png");
+	background-image: url("img/comment.svg");
+	-webkit-background-size: 12px;
+	-moz-background-size: 12px;
+	background-size: 12px;
 }
 
 .p_i_e .p_i_d a::before {
 	background-image: url("img/edit.png");
+	background-image: url("img/edit.svg");
+	-webkit-background-size: 14px;
+	-moz-background-size: 14px;
+	background-size: 14px;
 }
 
 .p_lt a , .p_lt .p_s_c a {
@@ -888,8 +898,85 @@ body {
 	background: rgba(255, 255, 255, 0.7);
 }
 
-#cmt .cmt_meta_head , #cmt .cmt_meta_time , #cmt .comment-edit-link {
+#cmt .cmt_meta_head , #cmt .cmt_meta_time , #cmt .comment-edit-link , #cmt .comment-delete-link {
 	margin: 0 10px 10px 0;
+}
+
+#cmt .cmt_meta_time {
+	font-size: 12px;
+	color: #555;
+	background: 
+}
+
+#cmt .comment-link {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-ms-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+}
+
+#cmt .comment:hover .comment-link {
+	opacity: 1;
+}
+
+#cmt .comment:hover .cmt_r > .comment-link {
+	opacity: 0;
+}
+
+#cmt .comment:hover > .cmt_r > .comment-link {
+	opacity: 1;
+}
+
+#cmt .comment-edit-link , #cmt .comment-delete-link , #cmt .comment-reply-link {
+	color: transparent;
+	border: none;
+	display: inline-block;
+	width: 26px;
+	height: 26px;
+	line-height: 14px;
+	vertical-align: middle;
+	margin: 0 5px 0 0;
+	background-color: rgb(54, 42, 18);
+	background-color: rgba(54, 42, 18, 0.7);
+	background-image: url("img/profile.png");
+	background-image: url("img/profile.svg");
+	-webkit-background-size: 12px;
+	-moz-background-size: 12px;
+	background-size: 12px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	border-radius: 100px;
+	-webkit-transition: 0.2s ease all;
+	-moz-transition: 0.2s ease all;
+	-ms-transition: 0.2s ease all;
+	transition: 0.2s ease all;
+}
+
+#cmt .comment-edit-link:hover , #cmt .comment-delete-link:hover , #cmt .comment-reply-link:hover  {
+	background-color: rgb(54, 42, 18);
+	background-color: rgba(54, 42, 18, 0.5);
+}
+
+#cmt .comment-edit-link:active , #cmt .comment-delete-link:active , #cmt .comment-reply-link:active  {
+	background-color: rgb(54, 42, 18);
+	background-color: rgba(54, 42, 18, 0.9);
+}
+
+#cmt .comment-edit-link {
+	background-image: url("img/edit.png");
+	background-image: url("img/edit.svg");
+}
+
+#cmt .comment-delete-link {
+	background-image: url("img/delete.png");
+	background-image: url("img/delete.svg");
+}
+
+#cmt .comment-reply-link {
+	background-image: url("img/comment.png");
+	background-image: url("img/comment.svg");
 }
 
 #cmt .logged-in-as {

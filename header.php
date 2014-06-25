@@ -29,7 +29,7 @@
 
 <header id="hcontent" >
 
-<div id="banner" style="background-image: url('<?php dpt_banner(); ?>.jpg');">
+<div id="banner" style="background-image: url('<?php dpt_banner(); ?>');">
 
 <nav id="nav">
 	<div id="nav_sd">
