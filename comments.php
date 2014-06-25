@@ -31,7 +31,7 @@ $comments_args = array(
   'cancel_reply_link' => __('放弃治疗','dpt'),
   'label_submit'      => __('发射','dpt'),
 
-  'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" required aria-required="true">' .
+  'comment_field' =>  '<p class="comment-form-comment"><textarea id="comment" name="comment" required aria-required="true" placeholder="' . __('Ctrl + Enter 快速发送') .'">' .
     '</textarea></p>',
 
   'must_log_in' => '<p class="must-log-in">' .

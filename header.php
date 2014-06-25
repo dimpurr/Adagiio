@@ -34,9 +34,9 @@
 <nav id="nav">
 	<div id="nav_sd">
 		<?php wp_nav_menu( array( 'theme_location' => 'main' ) ); ?>
-		<form id="nav_search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+		<div id="spg"><div id="sdiv"><form id="nav_search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<input id="nav_search_s" type="text" name="s" id="s" placeholder="Enter to Search" size="10" />
-		</form>
+		</form></div></div>
 	</div>
 </nav>
 
