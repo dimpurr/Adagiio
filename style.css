@@ -16,8 +16,6 @@ Text Domain: Adagiio
 
 body {
 	color: #454647;
-	word-wrap: break-word;
-	word-break: break-all;
 }
 
 h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
@@ -26,7 +24,6 @@ h1, h2, h3, h4, h5, h6, p, q, blockquote, li, a {
 
 p {
 	margin: 7px 0 7px 0;
-	word-wrap: break-word;
 }
 
 .sp_c p {
@@ -312,6 +309,7 @@ body {
 	text-align: right;
 	margin: 0;
 	padding: 0;
+	height: 0;
 }
 
 #nav_search_s {
