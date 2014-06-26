@@ -83,6 +83,10 @@ pre:hover, code:hover {
 	background: rgba(178, 229, 213, 0.4);
 }
 
+pre:focus, code:focus {
+	outline: none;
+}
+
 ul, ol {
 	margin: 0.6em 0;
 }
@@ -185,7 +189,7 @@ body {
 	background: url(img/bg.png) #EFEFEF;
 }
 
-#page , #nav ul, #head, #footer, #nav .menu ul , #sidebar , #sdiv {
+#page , #nav ul, #head, #footer, #nav div.menu ul , #nav_sd div[class*="menu"] ul , #sidebar , #sdiv {
 	max-width: 1000px;
 	margin: 0 auto;
 }
@@ -283,7 +287,7 @@ body {
 	border-bottom: 3px solid #f1faf4;
 }
 
-#nav_sd .menu {
+#nav_sd div.menu , #nav_sd div[class*="menu"] {
 	position: fixed;
 	display: block;
 	margin: 0 auto;
@@ -294,7 +298,6 @@ body {
 
 #spg {
 	position: fixed;
-	top: 30px;
 	left: 0;
 	z-index: 10;
 	width: 100%;
@@ -302,7 +305,7 @@ body {
 }
 
 #sdiv {
-	margin: 0 auto;
+	margin: -10px auto 0 auto;
 }
 
 #nav_search {
@@ -999,10 +1002,10 @@ body {
 #cmt #comment {
 	height: 118px;
 	width: 70%;
-	width: -webkit-calc(100% - 250px);
-	width: -moz-calc(100% - 250px);
-	width: -ms-calc(100% - 250px);
-	width: calc(100% - 250px);
+	width: -webkit-calc(100% - 230px);
+	width: -moz-calc(100% - 230px);
+	width: -ms-calc(100% - 230px);
+	width: calc(100% - 230px);
 }
 
 #cmt #cmt_submit {
@@ -1110,12 +1113,12 @@ body {
 	padding: 30px 50px 0 90px;
 }
 
-#nav_sd .menu {
+#nav_sd div.menu , #nav_sd div[class*="menu"] {
 	position: static;
 	padding: 0;
 }
 
-#nav .menu ul {
+#nav div.menu ul , #nav_sd div[class*=menu"] ul {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
@@ -1175,6 +1178,18 @@ body {
 	top: 14px;
 	left: 0;
 	width: auto;
+}
+
+#cmt .children {
+	padding-left: 0;
+}
+
+#cmt .comment-link {
+	opacity: 1;
+}
+
+#cmt .comment:hover .cmt_r > .comment-link {
+	opacity: 1;
 }
 
 #cmt #comment {

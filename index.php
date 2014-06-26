@@ -50,7 +50,31 @@
 
 <?php else : ?>
 
-	<h1>404</h1>
+<section id="content">
+<article class="sp">
+<hgroup class="p_lt p_a">
+	<header class="p_t">
+		<span class="p_s_c">404</span>
+		<h2><a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+			NOT FOUND
+		</a></h2>
+	</header> 
+</hgroup>
+<div class="sp_c">
+	<ul>
+		<li>如果看到此页面</li>
+		<li>说明服务器抽风了</li>
+		<li>或者您敲链接时手抖了</li>
+		<li>或者复制链接时失禁了</li>
+		<li>或者度娘大姨妈了</li>
+		<li>或者谷攻 Be Evil 了</li>
+		<li>请回到首页</li>
+		<li>然后继续</li>
+	</ul>
+</div>
+</article>
+<br />
+</section>
 
 <?php endif; ?>
 
