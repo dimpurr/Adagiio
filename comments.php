@@ -10,8 +10,8 @@
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		<nav id="cmt-nav" class="navigation" role="navigation">
-			<span class="cmt-nav-prev"><?php previous_comments_link('<img src="http://192.168.1.200/wp/wp-content/themes/adagiio/img/left.png" />'); ?></span>
-			<span class="cmt-nav-next"><?php next_comments_link('<img src="http://192.168.1.200/wp/wp-content/themes/adagiio/img/right.png" />'); ?></span>
+			<span class="cmt-nav-prev"><?php previous_comments_link('<img src="<?php echo get_template_directory_uri(); ?>/img/left.png" />'); ?></span>
+			<span class="cmt-nav-next"><?php next_comments_link('<img src="<?php echo get_template_directory_uri(); ?>/img/right.png" />'); ?></span>
 		</nav>
 		<?php endif; ?>
 

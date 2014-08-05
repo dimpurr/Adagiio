@@ -1,7 +1,7 @@
 /*
 Theme Name: Adagiio
 Theme URI: http://dimpurr.com/
-Version: 1.0
+Version: 1.1
 Author: Dimpurr
 Author URI: http://dimpurr.com
 Description: A MultiImage Anime WordPress Theme
@@ -511,10 +511,10 @@ body {
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 	padding: 10px 20px;
-	-webkit-transition: 0.5s ease all;
-	-moz-transition: 0.5s ease all;
-	-ms-transition: 0.5s ease all;
-	transition: 0.5s ease all;
+	-webkit-transition: 0.3s ease all;
+	-moz-transition: 0.3s ease all;
+	-ms-transition: 0.3s ease all;
+	transition: 0.3s ease all;
 }
 
 .p_l:hover .p_l_c {

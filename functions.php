@@ -33,6 +33,7 @@ if ( function_exists('register_sidebar') )
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 800, 410, true );
 
+
 function autoset_featured() {
 
 global $post;
@@ -53,11 +54,14 @@ add_action('new_to_publish', 'autoset_featured');
 
 // 检查更新，需要一个·服务器存放 info.json 和主题安装包。请参见 func 目录
 
-require_once(TEMPLATEPATH . '/func/theme-update-checker.php'); 
 $wpdaxue_update_checker = new ThemeUpdateChecker(
 	'Adagiio',
 	'http://work.dimpurr.com/theme/adagiio/update/info.json'
 );
+
+if (get_option('dpt_upck') != 'no' ) {
+	require_once(TEMPLATEPATH . '/func/theme-update-checker.php'); 
+}
 
 // 主题使用统计，如果需要。
 
@@ -229,6 +233,27 @@ function dpt_comment( $comment, $args, $depth ) {
 }
 endif;
 
+// 设置页单选按钮
+
+function dpt_va($option) {
+	if ( get_option($option) == "yes" ) { echo 'checked="true"'; }
+}
+
+function dpt_vb($option) {
+	if ( get_option($option) == "no" ) { echo 'checked="true"'; }
+}
+
+// 谷歌字体移除
+
+function remove_open_sans() {
+	wp_deregister_style('open-sans');
+	wp_register_style('open-sans',false);
+	wp_enqueue_style('open-sans','');
+}
+if ( get_option('dpt_rmgf') == "yes" ) {
+	add_action('init','remove_open_sans');
+}
+
 // 后台设置页面
 
 function dpt_menu_func(){   
@@ -252,8 +277,25 @@ function dpt_config(){ dpt_count(); ?>
 <p>将会随机输出 /bannner/ 下的文件作为随机头图，请确保有至少一个文件且全部为有效图片</p>
 
 <br>
-<h3>统计代码</h3>
+<h3><?php _e('自定义样式'); ?></h3>
+<textarea name="dpt_style" rows="10" cols="60" placeholder="<?php _e('输入 CSS 代码，以便更新时不会被覆盖'); ?>" style="font-size: 14px; font-family: Consolas, monospace, sans-serif, sans"><?php echo get_option('dpt_style'); ?></textarea><br>
+
+
+<br>
+<h3><?php _e('统计代码'); ?></h3>
 <textarea name="dpt_tongji" rows="10" cols="60" placeholder="<?php _e('贴入统计工具提供的网站统计代码','dpt'); ?>" style="font-size: 14px; font-family: Consolas, monospace, sans-serif, sans"><?php echo get_option('dpt_tongji'); ?></textarea><br>
+
+<br>
+<h3><?php _e('检查更新'); ?></h3>
+<p><?php _e('可以应对服务器设置导致的无限提示更新问题。需要更新时请手动打开此开关'); ?></p>
+<input type="radio" name="dpt_upck" value="yes" required="required" <?php dpt_va("dpt_upck"); ?> /><?php _e('启用'); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="dpt_upck" value="no" required="required" <?php dpt_vb("dpt_upck"); ?> /><?php _e('关闭'); ?><br>
+
+<br>
+<h3><?php _e('禁用 Google Font'); ?></h3>
+<p><?php _e('解决由 OpenSans 网络字体引用带来的加载缓慢问题'); ?></p>
+<input type="radio" name="dpt_rmgf" value="yes" required="required" <?php dpt_va("dpt_rmgf"); ?> /><?php _e('启用'); ?>&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="dpt_rmgf" value="no" required="required" <?php dpt_vb("dpt_rmgf"); ?> /><?php _e('关闭'); ?><br>
 
 <br>
 <input type="submit" name="option_save" value="<?php _e('保存设置','dpt'); ?>" />
@@ -294,6 +336,15 @@ if(isset($_POST['option_save'])){
 
 	$dpt_tongji = stripslashes($_POST['dpt_tongji']);
 	update_option( 'dpt_tongji', $dpt_tongji );
+
+	$dpt_upck = stripslashes($_POST['dpt_upck']);
+	update_option( 'dpt_upck', $dpt_upck );
+
+	$dpt_rmgf = stripslashes($_POST['dpt_rmgf']);
+	update_option( 'dpt_rmgf', $dpt_rmgf );
+
+	$dpt_style = stripslashes($_POST['dpt_style']);
+	update_option( 'dpt_style', $dpt_style );
 
 }
 

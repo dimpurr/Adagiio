@@ -21,7 +21,14 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
 <![endif]-->
 
-<?php wp_head(); ?>
+<?php wp_head();
+
+$dpt_style = get_option("dpt_style");
+if ( !empty($dpt_style) ) {
+	echo "<style>" . $dpt_style . "</style>";
+}
+
+?>
 
 </head>
 
