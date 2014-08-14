@@ -52,15 +52,14 @@ if (!$already_has_thumb)  {
 
 add_action('new_to_publish', 'autoset_featured');
 
-// 检查更新，需要一个·服务器存放 info.json 和主题安装包。请参见 func 目录
-
-$wpdaxue_update_checker = new ThemeUpdateChecker(
-	'Adagiio',
-	'http://work.dimpurr.com/theme/adagiio/update/info.json'
-);
+// 检查更新，需要一个服务器存放 info.json 和主题安装包。请参见 func 目录
 
 if (get_option('dpt_upck') != 'no' ) {
 	require_once(TEMPLATEPATH . '/func/theme-update-checker.php'); 
+	$wpdaxue_update_checker = new ThemeUpdateChecker(
+		'Adagiio',
+		'http://work.dimpurr.com/theme/adagiio/update/info.json'
+	);
 }
 
 // 主题使用统计，如果需要。
